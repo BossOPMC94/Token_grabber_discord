@@ -27,6 +27,11 @@ input[type="text"] {
   margin-bottom: 10px; /* Increased margin */
 }
 
+input[type="text"]:hover,
+input[type="text"]:focus {
+  border-color: #8a63d2; /* Darker border color on hover/focus */
+}
+
 button {
   background-color: #8a63d2;
   color: #fff;
@@ -37,6 +42,10 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px; /* Increased margin */
+}
+
+button:hover {
+  background-color: #7a53c2; /* Darker background color on hover */
 }
 
 .console {

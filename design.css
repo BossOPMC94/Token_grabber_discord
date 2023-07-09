@@ -1,8 +1,9 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #36393F; /* Discord background color */
   margin: 0;
   padding: 0;
+  color: #DCDDDE; /* Discord text color */
 }
 
 .container {
@@ -12,7 +13,7 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #fff; /* White text color */
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -21,20 +22,22 @@ input[type="text"] {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #72767D; /* Discord input border color */
   border-radius: 4px;
   transition: border-color 0.3s ease;
   margin-bottom: 10px; /* Increased margin */
+  background-color: #40444B; /* Discord input background color */
+  color: #DCDDDE; /* Discord text color */
 }
 
 input[type="text"]:hover,
 input[type="text"]:focus {
-  border-color: #8a63d2; /* Darker border color on hover/focus */
+  border-color: #7289DA; /* Discord input border color on hover/focus */
 }
 
 button {
-  background-color: #8a63d2;
-  color: #fff;
+  background-color: #7289DA; /* Discord button background color */
+  color: #fff; /* White text color */
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -45,17 +48,18 @@ button {
 }
 
 button:hover {
-  background-color: #7a53c2; /* Darker background color on hover */
+  background-color: #677BC4; /* Darker button background color on hover */
 }
 
 .console {
   margin-top: 20px;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #40444B; /* Discord console background color */
+  border: 1px solid #72767D; /* Discord console border color */
   border-radius: 4px;
   overflow: auto;
   max-height: 200px;
+  color: #DCDDDE; /* Discord text color */
 }
 
 .console p {
@@ -64,11 +68,11 @@ button:hover {
 }
 
 .console.success {
-  border-color: #4caf50;
+  border-color: #43B581; /* Discord success border color */
 }
 
 .console.error {
-  border-color: #f44336;
+  border-color: #F04747; /* Discord error border color */
 }
 
 .popup {
@@ -77,8 +81,8 @@ button:hover {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
+  background-color: #36393F; /* Discord background color */
+  color: #DCDDDE; /* Discord text color */
   padding: 10px 20px;
   border-radius: 4px;
   z-index: 999;

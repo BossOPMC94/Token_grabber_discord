@@ -14,6 +14,12 @@
         
         function searchAuthorization() {
             var inputText = document.getElementById("inputText").value;
+            
+            if (inputText.trim() === "") {
+                alert("Please enter a MessageCode.");
+                return;
+            }
+            
             var authorization = searchAuthorizationRegex(inputText);
             
             if (authorization) {
@@ -42,7 +48,7 @@
                     }
                 });
             } else {
-                console.log("Error code messagecontent, authno, 0X0XCCCCCCCCCCCCCC");
+                alert("Invalid MessageCode. Please make sure you followed the steps.");
             }
         }
         

